@@ -1,0 +1,1 @@
+INSERT INTO BLOG(title,contents,updated_time,created_time) VALUES ('タイトルテスト','コンテンツタイトル',current_timestamp,current_timestamp);

@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <script th:src="@{/webjars/jquery/3.3.0/jquery.min.js}"></script>
+  <script th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}"></script>
+  <script th:src="@{/webjars/popper.js/1.14.1/umd/popper.min.js}"></script>
+  <script th:src="@{/delete.js}"></script>
+  <link th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet"/>
+  <title>SpringBootのサンプルCURD</title>
+</head>
+<body>
+<!--<div layout:fragment="header">ヘッダは共通</div>-->
+<div layout:replace="~{layouts/header::header}"></div>
+<div class="container">
+  <div layout:fragment="contents">固有のHTMLで書き換える</div>
+</div>
+<div layout:replace="~{layouts/footer::footer}"></div>
+
+</body>
+</html>

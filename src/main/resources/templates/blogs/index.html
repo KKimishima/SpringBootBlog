@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="layouts/layout">
+<head>
+</head>
+<body>
+<div layout:fragment="contents">
+  <div class="card mt-3">
+    <div class="card-header">Index</div>
+    <div class="card-body">
+      <p>登録一覧</p>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">編集</th>
+          <th scope="col">削除</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog : ${blogs}">
+          <td th:text="${blog.id}"></td>
+          <td><a th:href="@{/blogs/{id}(id=${blog.id})}" th:text="${blog.contents}"></a></td>
+          <td><a class="btn btn-warning" th:href="@{/blogs/{id}/edit(id=${blog.id})}" th:text="編集"></a></td>
+          <td>
+            <form th:action="@{'/blogs/{id}'(id=${blog.id})}" method="post">
+              <input type="hidden" name="_method" value="delete"/>
+              <button class="btn-danger btn btn-delete" type="submit">削除</button>
+            </form>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><a class="btn-primary btn btn-delete" th:href="@{/blogs/new}" th:text="新規作成"></a></p>
+  </div>
+</div>
+</body>
+</html>

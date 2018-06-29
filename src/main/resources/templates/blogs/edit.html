@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="layouts/layout">
+<head>
+</head>
+<body>
+<div layout:fragment="contents">
+  <div class="card mt-3">
+    <div class="card-header">edit</div>
+    <div class="card-body">
+      <p>編集</p>
+      <div layout:replace="~{blogs/form::form}"></div>
+      <a class="btn btn-info" th:href="@{/blogs/}" th:text="戻る"></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

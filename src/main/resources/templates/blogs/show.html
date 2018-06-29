@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="layouts/layout">
+<head>
+</head>
+<body>
+<div layout:fragment="contents">
+  <div class="card mt-3">
+    <div class="card-header">Show</div>
+    <div class="card-body">
+      <p th:text="${blogs.id}"></p>
+      <p th:text="${blogs.title}"></p>
+      <p th:text="${blogs.contents}"></p>
+      <p th:text="${blogs.updatedTime}"></p>
+      <p th:text="${blogs.createdTime}"></p>
+    </div>
+  </div>
+  <a class="btn-primary btn" th:href="@{/blogs/{id}/edit(id=${blogs.id})}" th:text="編集"></a>
+  <form th:action="@{'/blogs/{id}'(id=${blogs.id})}" method="post">
+    <input type="hidden" name="_method" value="delete"/>
+    <button class="btn-danger btn" type="submit">削除</button>
+  </form>
+  <a class="btn btn-info" th:href="@{/blogs/}" th:text="戻る"></a>
+</div>
+</body>
+</html>
