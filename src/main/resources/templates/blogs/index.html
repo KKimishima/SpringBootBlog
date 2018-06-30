@@ -16,6 +16,7 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">タイトル</th>
+          <th scope="col">ユーザ</th>
           <th scope="col">編集</th>
           <th scope="col">削除</th>
         </tr>
@@ -24,6 +25,7 @@
         <tr th:each="blog : ${blogs}">
           <td th:text="${blog.id}"></td>
           <td><a th:href="@{/blogs/{id}(id=${blog.id})}" th:text="${blog.contents}"></a></td>
+          <td th:text="${blog.user == null} ? '登録者情報なし' : ${blog.user.name}"></td>
           <td><a class="btn btn-warning" th:href="@{/blogs/{id}/edit(id=${blog.id})}" th:text="編集"></a></td>
           <td>
             <form th:action="@{'/blogs/{id}'(id=${blog.id})}" method="post">

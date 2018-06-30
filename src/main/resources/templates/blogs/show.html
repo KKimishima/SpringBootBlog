@@ -15,6 +15,7 @@
       <p th:text="${blogs.contents}"></p>
       <p th:text="${blogs.updatedTime}"></p>
       <p th:text="${blogs.createdTime}"></p>
+      <p th:text="${blogs.user == null} ? '登録者情報なし' : ${blogs.user.name}"></p>
     </div>
   </div>
   <a class="btn-primary btn" th:href="@{/blogs/{id}/edit(id=${blogs.id})}" th:text="編集"></a>

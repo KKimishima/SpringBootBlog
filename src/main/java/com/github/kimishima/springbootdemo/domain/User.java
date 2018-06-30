@@ -1,6 +1,5 @@
 package com.github.kimishima.springbootdemo.domain;
 
-
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -8,26 +7,22 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
 @Data
-@Table(name = "BLOG")
-public class Blog {
+@Entity
+@Table(name = "user")
+public class User {
   @CreationTimestamp
   @Column(name = "created_time", updatable = false)
   public Timestamp createdTime;
   @Id
+  @Column
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
   private Long id;
-  @Column(name = "title")
-  private String title;
-  @Column(name = "contents")
-  private String contents;
+  @Column
+  private String name;
+  @Column
+  private String email;
   @UpdateTimestamp
   @Column(name = "updated_time")
   private Timestamp updatedTime;
-
-  @ManyToOne
-  @JoinColumn(name = "user_id")
-  private User user;
 }
