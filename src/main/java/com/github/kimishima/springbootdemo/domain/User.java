@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "person")
 public class User {
   @CreationTimestamp
   @Column(name = "created_time", updatable = false)
