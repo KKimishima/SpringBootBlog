@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       lang="ja"
       xmlns="http://www.w3.org/1999/xhtml"
       layout:decorator="layouts/layout">
@@ -38,6 +40,15 @@
       </table>
     </div>
     <p><a class="btn-primary btn btn-delete" th:href="@{/blogs/new}" th:text="新規作成"></a></p>
+    <div sec:authorize="hasRole('ADMIN')">
+      <p>今は<b>ADMIN</b>権限でログインしています。</p>
+    </div>
+    <div sec:authorize="hasRole('USER')">
+      <p>今は<b>USER</b>権限でログインしています。</p>
+    </div>
+    <form role="form" id="logout" th:action="@{/logout}" method="post">
+      <button type="submit">ログアウト</button>
+    </form>
   </div>
 </div>
 </body>

@@ -1,5 +1,6 @@
 package com.github.kimishima.springbootdemo.controller;
 
+
 import com.github.kimishima.springbootdemo.domain.Blog;
 import com.github.kimishima.springbootdemo.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
-@RequestMapping("/blogs")
+@RequestMapping({"/blogs","/"})
 public class BlogsController {
   @Autowired
   BlogService blogService;

@@ -90,6 +90,15 @@
             <artifactId>jquery-ui</artifactId>
             <version>1.12.1</version>
         </dependency>
+        <!--https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
